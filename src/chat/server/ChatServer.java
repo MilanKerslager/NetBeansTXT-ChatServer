@@ -1,7 +1,9 @@
-// Mature Chat server with socket
+// Multithreaded Chat server with socket.
 // Server accepts many clients many times.
+// The communication is one way only (server shows what client sends).
 // For testing use PuTTY, connect to localhost, port 3333, raw connection.
-// To end the session, write QUIT to the server alone on the line.
+// To end the session, write QUIT on the client side alone on the line.
+// https://github.com/MilanKerslager/NetBeansTXT-ChatServer
 
 package chat.server;
 
@@ -58,8 +60,8 @@ public class ChatServer implements Runnable {
                     break;
                 }
             }
-            System.out.println(TimeStamp.format(new Date())+
-                    ": thread "+id+": This thread ends now. Bye.");
+            System.out.println(TimeStamp.format(new Date())+": thread "+id+
+                    ": Client sended QUIT so this thread ends now. Bye.");
             socket.close();
             streamIn.close();
         } catch (IOException ex) {
