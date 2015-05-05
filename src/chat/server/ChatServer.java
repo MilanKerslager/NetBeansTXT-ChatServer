@@ -2,6 +2,7 @@
 // Server accepts many clients many times.
 // For testing use PuTTY, connect to localhost, port 3333, raw connection.
 // To end the session, write QUIT to the server alone on the line.
+// https://github.com/MilanKerslager/NetBeansTXT-ChatServer
 
 package chat.server;
 
